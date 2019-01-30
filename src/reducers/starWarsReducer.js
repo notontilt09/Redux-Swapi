@@ -1,13 +1,15 @@
 import { 
   FETCH_DATA_START, 
   FETCH_DATA_SUCCESS, 
-  FETCH_DATA_FAIL
+  FETCH_DATA_FAIL,
+  FETCH_NEXT,
+  FETCH_PREV
 } from  "../actions";
 
 const initialState = {
   characters: [],
   isFetching: false,
-  error: ''
+  error: '',
   // Array characters, Boolean fetching, null error.
 };
 
@@ -28,7 +30,7 @@ export const charsReducer = (state = initialState, action) => {
         ...state,
         error: '',
         isFetching: false,
-        characters: action.payload
+        characters: action.payload,
       }
 
     case FETCH_DATA_FAIL:
@@ -36,6 +38,16 @@ export const charsReducer = (state = initialState, action) => {
         ...state,
         error: 'Whoops, something went wrong here! Check to make sure the you\'re calling the correct url in the API call.  Otherwise, the Dark Side of the force has won and our DB has been deleted',
         isFetching: false,
+      }
+    case FETCH_NEXT:
+      return {
+        ...state,
+        characters: action.payload
+      }
+    case FETCH_PREV:
+      return {
+        ...state,
+        characters: action.payload
       }
     default:
       return state;
