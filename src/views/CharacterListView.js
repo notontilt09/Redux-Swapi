@@ -23,6 +23,11 @@ class CharacterListView extends React.Component {
               <CharacterList characters={this.props.characters} />
             </div>
           )}
+          {this.props.error && (
+            <div className="error">
+              <h3>{this.props.error}</h3>
+            </div>
+          )}
         </React.Fragment>
       )
   }
