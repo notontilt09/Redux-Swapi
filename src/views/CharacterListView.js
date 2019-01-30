@@ -15,7 +15,7 @@ class CharacterListView extends React.Component {
 
   render() {
       return (
-        <React.Fragment>
+        <div className='App'>
           <h1>Star Wars API Characters!</h1>
           {this.props.isFetching && <h2>Fetching Your Characters!</h2>}
           {this.props.characters && (
@@ -28,7 +28,7 @@ class CharacterListView extends React.Component {
               <h3>{this.props.error}</h3>
             </div>
           )}
-        </React.Fragment>
+        </div>
       )
   }
 }

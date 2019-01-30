@@ -34,7 +34,7 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_DATA_FAIL:
       return {
         ...state,
-        error: 'Whoops, something went wrong here!',
+        error: 'Whoops, something went wrong here! Check to make sure the you\'re calling the correct url in the API call.  Otherwise, the Dark Side of the force has won and our DB has been deleted',
         isFetching: false,
       }
     default:
