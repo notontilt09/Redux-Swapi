@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Loader from 'react-loader-spinner'
 
 import { CharacterList } from "../components";
 import { getData } from '../actions'
@@ -17,7 +18,7 @@ class CharacterListView extends React.Component {
       return (
         <div className='App'>
           <h1>Star Wars API Characters!</h1>
-          {this.props.isFetching && <h2>Fetching Your Characters!</h2>}
+          {this.props.isFetching && <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />}
           {this.props.characters && (
             <div className="CharactersList_wrapper">
               <CharacterList characters={this.props.characters} />
