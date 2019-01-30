@@ -12,6 +12,7 @@ const initialState = {
 };
 
 export const charsReducer = (state = initialState, action) => {
+  console.log('reducer', action)
   switch (action.type) {
     // Fill me in with the important reducers
     // action types should be FETCHING, SUCCESS and FAILURE
