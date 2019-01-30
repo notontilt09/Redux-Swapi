@@ -14,22 +14,17 @@ class CharacterListView extends React.Component {
   }
 
   render() {
-    if (this.props.isFetching) {
-      // return something here to indicate that you are fetching data
       return (
-        <h1>Fetching your data!</h1>
+        <React.Fragment>
+          <h1>Star Wars API Characters!</h1>
+          {this.props.isFetching && <h2>Fetching Your Characters!</h2>}
+          {this.props.characters && (
+            <div className="CharactersList_wrapper">
+              <CharacterList characters={this.props.characters} />
+            </div>
+          )}
+        </React.Fragment>
       )
-    }
-    if (this.props.characters) {
-      return (
-        <div className="CharactersList_wrapper">
-          <CharacterList characters={this.props.characters} />
-        </div>
-      );
-    }
-    return (
-      <h1>Star Wars API Redux</h1>
-    ) 
   }
 }
 
